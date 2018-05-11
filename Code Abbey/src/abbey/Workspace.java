@@ -9,11 +9,14 @@ public class Workspace {
 		System.out.println("Which problem would you like answered?\n");
 		int n = scan.nextInt();
 		scan.close();
-		System.out.println("The answer to problem " + n + " is \"" + getAnswer(n) + "\".");
+		System.out.println("The answer to problem " + n + " is \"");
+		getAnswer(n);
+		System.out.print(".");
 	}
 	
-	public int getAnswer(int n) {
-		
+	public static void getAnswer(int n) {
+		int numAns = -1;
+		String stringAns = "";
 	}
 		
 	

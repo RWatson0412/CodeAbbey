@@ -19,10 +19,35 @@ public class Workspace {
 		if(n == 2) return p2();
 		if(n == 3) return p3();
 		if(n == 4) return p4();
+		if(n == 5) return p5();
 		return "This problem either doesn't exist or hasn't been solved yet.";
 	}
 	
-	
+	public static String p5() {
+		System.out.println("Problem 4: Find minimum number of given triples\nHow many triples would you like to enter?");
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		System.out.println("Enter your numbers separated by a space.");
+		List<Integer> nums = new ArrayList<Integer>();
+		for(int i = 0; i < n; i++) {
+			for(int k = 0; k < 3; k++) {
+				nums.add(input.nextInt());
+			}
+		}
+		List<Integer> ans = new ArrayList<Integer>();
+		for(int i = 0; i < nums.size(); i += 3) {
+			int min = nums.get(i);
+			if(min > nums.get(i + 1)) min = nums.get(i + 1);
+			if(min > nums.get(i + 2)) min = nums.get(i + 2);
+			ans.add(min);
+		}
+		String returnAns = "";
+		for(int i = 0; i < ans.size(); i++) {
+			returnAns += ans.get(i) + " ";
+		}
+		input.close();
+		return returnAns.substring(0, returnAns.length());
+	}
 	public static String p4() {
 		System.out.println("Problem 4: Find minimum number of given pairs\nHow many pairs of numbers would you like to enter?");
 		Scanner input = new Scanner(System.in);
@@ -42,6 +67,7 @@ public class Workspace {
 		for(int i = 0; i < ans.size(); i++) {
 			returnAns += ans.get(i) + " ";
 		}
+		input.close();
 		return returnAns.substring(0, returnAns.length() - 1);
 	}
 	public static String p3() {

@@ -19,10 +19,9 @@ public class Workspace {
 		if(n == 2) return p2();
 		if(n == 3) return p3();
 		if(n == 4) return p4();
-		if(n == 5) return p5();
+		if(n == 5) return p5();;
 		return "This problem either doesn't exist or hasn't been solved yet.";
 	}
-	
 	public static String p5() {
 		System.out.println("Problem 4: Find minimum number of given triples\nHow many triples would you like to enter?");
 		Scanner input = new Scanner(System.in);
@@ -46,7 +45,7 @@ public class Workspace {
 			returnAns += ans.get(i) + " ";
 		}
 		input.close();
-		return returnAns.substring(0, returnAns.length());
+		return returnAns.substring(0, returnAns.length() - 1);
 	}
 	public static String p4() {
 		System.out.println("Problem 4: Find minimum number of given pairs\nHow many pairs of numbers would you like to enter?");
